@@ -1,12 +1,11 @@
 import { useState, useEffect, useRef } from "react";
 
-import ImageSlider from "../ImageSlider";
-import ArrowButton from "../ArrowButton";
 import Article from "../Article";
-import { Hero1, Hero2, Hero3 } from "../Pictures/Heros";
 import content from "../../content.json";
 import ArrowLink from "../ArrowLink";
 
+import { Hero1, Hero2, Hero3 } from "../Pictures/Heros";
+import Slider from "../Slider";
 const images = [<Hero1 />, <Hero2 />, <Hero3 />];
 const { slides } = content;
 const timing = 1000;
@@ -30,36 +29,25 @@ export default function TopCard() {
   useEffect(() => {
     refHeading.current?.animate(
       [
-        { backgroundColor: "rgba(255,255,255,1)" },
-        { backgroundColor: "rgba(255,255,255,1)" },
-        { backgroundColor: "rgba(255,255,255,0)" },
+        { opacity: 0, transform: "translateX(10px)", offset: 0 },
+        { opacity: 0, transform: "translateX(10px)", offset: 0.6 },
+        { opacity: 1, transform: "translateX(0)", offset: 1 },
       ],
-      { duration: timing, iterations: 1 }
+      { duration: timing * 0.9, iterations: 1 }
     );
   }, [current]);
 
   return (
-    <div className="grid grid-cols-[5fr_4fr]">
-      <div className="relative">
-        <ImageSlider images={images} current={current} />
-        <div className="absolute left-[100%] bottom-0 flex flex-row z-10">
-          <ArrowButton onClick={prevSlide} timing={timing}>
-            <img src="/images/icon-angle-left.svg" alt="arrow-left" className="pointer-events-none w-1/4 h-1/3" />
-          </ArrowButton>
-          <ArrowButton onClick={nextSlide} timing={timing}>
-            <img src="/images/icon-angle-right.svg" alt="arrow-right" className="pointer-events-none w-1/4 h-1/3" />
-          </ArrowButton>
-        </div>
-      </div>
-      <div className="w-full h-full p-16 relative z-0">
-        <div className="relative">
-          <div ref={refHeading} className="absolute inset-0 pointer-events-none"></div>
-          <h1 className="text-6xl font-semibold">{slides[currentExtra].heading}</h1>
+    <div className={`grid relative grid-rows-[300px_1fr] md:grid-rows-1 md:static md:grid-cols-[5fr_4fr]`}>
+      <Slider images={images} timing={timing} current={current} nextSlide={nextSlide} prevSlide={prevSlide} />
+      <div className="w-full h-full p-8 md:p-16 relative">
+        <div className="relative" ref={refHeading}>
+          <h1 className="text-3xl md:text-6xl font-semibold">{slides[currentExtra].heading}</h1>
           <Article>
             <>{slides[currentExtra].paragraph}</>
           </Article>
         </div>
-        <ArrowLink className="absolute bottom-32 left-16" />
+        <ArrowLink className="mt-4 md:mt-0 md:absolute md:bottom-32 md:left-16" />
       </div>
     </div>
   );

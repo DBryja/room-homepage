@@ -1,0 +1,9 @@
+/* SLIDER ANIMATIONS */
+.slide {
+  transform: translateX(150%);
+  transition-duration: 1s ease;
+}
+.slide.active {
+  transform: translateX(0);
+  transition-duration: 1s;
+}

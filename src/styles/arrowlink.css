@@ -1,0 +1,32 @@
+/* ARROW ANIMATIONS */
+.arrowLink__text {
+  transition: 0.4s cubic-bezier(0.22, 0.68, 0, 1.71);
+  letter-spacing: 0.5rem;
+}
+.arrowLink:hover .arrowLink__text {
+  transition: 0.4s cubic-bezier(0.22, 0.68, 0, 1.71);
+  letter-spacing: 0.7rem;
+}
+
+.arrowLink__arrow {
+  transition: 0.4s cubic-bezier(0.22, 0.68, 0, 1.71);
+  width: 80px;
+  transform: scaleX(1);
+}
+.arrowLink:hover .arrowLink__arrow {
+  transition: 0.4s cubic-bezier(0.22, 0.68, 0, 1.71);
+  transform: scaleX(1.2);
+}
+
+@media (min-width: 800px) {
+  .arrowLink__text {
+    letter-spacing: 1rem;
+  }
+  .arrowLink:hover .arrowLink__text {
+    letter-spacing: 1.2rem;
+  }
+
+  .arrowLink__arrow {
+    width: 120px;
+  }
+}

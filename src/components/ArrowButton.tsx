@@ -14,7 +14,7 @@ export default function ArrowButton({ children, onClick, timing }: IArrowButton)
   return (
     <button
       onClick={(e) => handleClick(e)}
-      className="bg-neutral-950 w-24 h-24 flex items-center justify-center hover:bg-neutral-900"
+      className={`bg-neutral-950 h-16 w-16 md:w-24 md:h-24 flex items-center justify-center md:hover:bg-neutral-900 md:transition-colors md:duration-300`}
     >
       {children}
     </button>
