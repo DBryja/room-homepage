@@ -1,4 +1,5 @@
 import "../styles/slider.css";
+import { isDesktop } from "../utils/utils";
 
 export interface IImageSlider {
   images: JSX.Element[];
@@ -23,8 +24,7 @@ function ImageSlider({ images, current }: IImageSlider): JSX.Element {
     </div>
   );
 
-  if (window.innerWidth > 800) return <div className="w-full h-full relative">{renderedImages}</div>;
-  else return renderedImages;
+  return isDesktop(window) ? <div className="w-full h-full relative">{renderedImages}</div> : renderedImages;
 }
 
 export default ImageSlider;

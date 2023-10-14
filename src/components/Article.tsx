@@ -1,5 +1,5 @@
 interface IArticle {
-  children: JSX.Element;
+  children: JSX.Element | string;
 }
 
 function Article({ children }: IArticle): JSX.Element {

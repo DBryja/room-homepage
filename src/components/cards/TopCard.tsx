@@ -43,9 +43,7 @@ export default function TopCard() {
       <div className="w-full h-full p-8 md:p-16 relative">
         <div className="relative" ref={refHeading}>
           <h1 className="text-3xl md:text-6xl font-semibold">{slides[currentExtra].heading}</h1>
-          <Article>
-            <>{slides[currentExtra].paragraph}</>
-          </Article>
+          <Article>{slides[currentExtra].paragraph}</Article>
         </div>
         <ArrowLink className="mt-4 md:mt-0 md:absolute md:bottom-32 md:left-16" />
       </div>

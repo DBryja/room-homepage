@@ -1,6 +1,7 @@
 import HeaderLinkItem from "./HeaderLinkItem";
 import "../styles/header.css";
 import MobileMenu from "./MobileMenu";
+import { isDesktop } from "../utils/utils";
 
 function Header(): JSX.Element {
   const logo = (
@@ -18,22 +19,23 @@ function Header(): JSX.Element {
       <HeaderLinkItem name="contact" url="/contact" />
     </>
   );
-  if (window.innerWidth > 800)
-    return (
+
+  let header = (
+    <div className="absolute top-10 left-0 right-0 h-12 z-50">
+      <a href="/" className="absolute left-1/2 top-1/2 translate-x-[-40%] -translate-y-1/2">
+        {logo}
+      </a>
+      <MobileMenu items={menuItems} />
+    </div>
+  );
+  if (isDesktop(window))
+    header = (
       <div className="flex flex-row gap-10 absolute top-10 left-10 z-50">
         <a href="/">{logo}</a>
         {menuItems}
       </div>
     );
-  else
-    return (
-      <div className="absolute top-10 left-0 right-0 h-12 z-50">
-        <a href="/" className="absolute left-1/2 top-1/2 translate-x-[-40%] -translate-y-1/2">
-          {logo}
-        </a>
-        <MobileMenu items={menuItems} />
-      </div>
-    );
+  return header;
 }
 
 export default Header;
