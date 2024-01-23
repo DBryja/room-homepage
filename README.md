@@ -2,7 +2,8 @@
 
 This is a solution to the [Room homepage challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/room-homepage-BtdBY_ENq). 
 Frontend Mentor challenges help you improve your coding skills by building realistic projects.
-Live version - [https://room-homepage-dbryja.vercel.app/](https://room-homepage-dbryja.vercel.app/)
+
+- Live version - [https://room-homepage-dbryja.vercel.app/](https://room-homepage-dbryja.vercel.app/)
 
 ## Table of contents
 
