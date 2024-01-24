@@ -8,7 +8,9 @@ function App(): JSX.Element {
       <Header />
       <div
         className={`${
-          window.innerWidth > 800 ? "grid min-h-screen w-full" : "flex flex-col w-screen overflow-x-hidden"
+          window.innerWidth > 800
+            ? "grid min-h-screen w-full grid-rows-[3fr_2fr]"
+            : "flex flex-col w-screen overflow-x-hidden"
         }`}
       >
         <TopCard />

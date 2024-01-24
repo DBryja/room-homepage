@@ -38,7 +38,7 @@ export default function TopCard() {
   }, [current]);
 
   return (
-    <div className={`grid relative grid-rows-[300px_1fr] md:grid-rows-1 md:static md:grid-cols-[1fr_1fr]`}>
+    <div className={`grid relative grid-rows-[300px_1fr] md:grid-rows-1 md:static md:grid-cols-[5fr_4fr]`}>
       <Slider images={images} timing={timing} current={current} nextSlide={nextSlide} prevSlide={prevSlide} />
       <div className="w-full h-full p-8 lg:pb-28 relative">
         <div className="relative flex flex-col h-full" ref={refHeading}>
