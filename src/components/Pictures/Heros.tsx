@@ -1,4 +1,4 @@
-const herosClassNames = "w-full h-full object-cover";
+const herosClassNames = "w-full h-full object-fit";
 export function Hero1() {
   return (
     <img

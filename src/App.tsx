@@ -8,9 +8,7 @@ function App(): JSX.Element {
       <Header />
       <div
         className={`${
-          window.innerWidth > 800
-            ? "grid grid-rows-[2fr_1fr] h-screen w-full"
-            : "flex flex-col w-screen overflow-x-hidden"
+          window.innerWidth > 800 ? "grid min-h-screen w-full" : "flex flex-col w-screen overflow-x-hidden"
         }`}
       >
         <TopCard />
@@ -27,12 +25,7 @@ function App(): JSX.Element {
           Frontend Mentor
         </a>
         . Coded by{" "}
-        <a
-          href="https://github.com/DBryja"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-600"
-        >
+        <a href="https://github.com/DBryja" target="_blank" rel="noopener noreferrer" className="text-blue-600">
           Dawid Bryja
         </a>
         .

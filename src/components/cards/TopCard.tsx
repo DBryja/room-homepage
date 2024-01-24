@@ -38,14 +38,14 @@ export default function TopCard() {
   }, [current]);
 
   return (
-    <div className={`grid relative grid-rows-[300px_1fr] md:grid-rows-1 md:static md:grid-cols-[5fr_4fr]`}>
+    <div className={`grid relative grid-rows-[300px_1fr] md:grid-rows-1 md:static md:grid-cols-[1fr_1fr]`}>
       <Slider images={images} timing={timing} current={current} nextSlide={nextSlide} prevSlide={prevSlide} />
-      <div className="w-full h-full p-8 md:p-16 relative">
-        <div className="relative" ref={refHeading}>
-          <h1 className="text-3xl md:text-6xl font-semibold">{slides[currentExtra].heading}</h1>
+      <div className="w-full h-full p-8 lg:pb-28 relative">
+        <div className="relative flex flex-col h-full" ref={refHeading}>
+          <h1 className="text-3xl lg:text-6xl font-semibold">{slides[currentExtra].heading}</h1>
           <Article>{slides[currentExtra].paragraph}</Article>
+          <ArrowLink className="mt-auto" />
         </div>
-        <ArrowLink className="mt-4 md:mt-0 md:absolute md:bottom-32 md:left-16" />
       </div>
     </div>
   );

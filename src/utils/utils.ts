@@ -1,1 +1,1 @@
-export const isDesktop = (window: Window): boolean => window.innerWidth > 800;
+export const isDesktop = (window: Window): boolean => window.innerWidth > 1023;

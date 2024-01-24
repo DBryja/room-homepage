@@ -22,7 +22,7 @@ function Header(): JSX.Element {
 
   let header = (
     <div className="absolute top-10 left-0 right-0 h-12 z-50">
-      <a href="/" className="absolute left-1/2 top-1/2 translate-x-[-40%] -translate-y-1/2">
+      <a href="/" className="absolute left-1/2 top-1/2 translate-x-[-40%] -translate-y-1/2 md:translate-x-[-80%]">
         {logo}
       </a>
       <MobileMenu items={menuItems} />
